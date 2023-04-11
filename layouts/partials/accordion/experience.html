@@ -5,6 +5,6 @@
   <a href="{{ .url }}">{{ .company }}</a>
   {{ else }} {{ .company }} {{ end }}
 </p>
-<p>{{ .details | markdownify }}</p>
+<p>{{ .details | $.RenderString (dict "markup" "org" "display" "block") }}</p>
 <p class="nav">{{ .tech }}</p>
 {{ end }}
